@@ -23,7 +23,7 @@ export default function UpcomingDeadlines({ items = null }) {
         rounded-lg p-4
         border border-[var(--border-light)] dark:border-[var(--border-dark)]
         shadow-sm
-        w-full
+        w-full md:w-1/2
       "
     >
       <div className="flex items-center justify-between mb-3">

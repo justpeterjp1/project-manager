@@ -5,7 +5,7 @@ import UpcomingDeadlines from "./UpcomingDeadlines";
 
 function QuickNotesWidget() {
   return (
-    <div className="bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] rounded-lg p-4 border border-[var(--border-light)] dark:border-[var(--border-dark)] shadow-sm">
+    <div className="bg-[var(--surface-light)]  dark:bg-[var(--surface-dark)] rounded-lg p-4 border border-[var(--border-light)] dark:border-[var(--border-dark)] shadow-sm md:w-1/2">
       <h3 className="text-sm font-semibold text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)] mb-2">
         Quick Notes
       </h3>
@@ -67,16 +67,15 @@ export default function Dashboard({ activeSection }) {
         title="Completed Projects"/>
       </div>
       {/* Most recent task section connected to the sort button */}
-     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            {/* Left column — Recent tasks */}
-            <div className="lg:col-span-5">
+     <div className="flex flex-col md:flex-row gap-2 ">
+            <div className="">
               <RecentTasks />
             </div>
     
             {/* Right column — Deadlines + 2 widgets */}
-            <div className="lg:col-span-4 flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row gap-2 ">
               <UpcomingDeadlines />
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+              <div className="flex flex-1 flex-col md:flex-row gap-2 w-full">
                 <QuickNotesWidget />
                 <ProgressWidget />
               </div>
