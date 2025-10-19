@@ -1,6 +1,7 @@
-export default function ButtonOutline({ label, icon: Icon }) {
+export default function ButtonOutline({ label, icon: Icon, onClick = () => console.log('Default click action') }) {
   return (
     <button
+    onClick={onClick}
       className="
         flex items-center justify-center gap-1 sm:gap-2
         border border-[var(--primary)]

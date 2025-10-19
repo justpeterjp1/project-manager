@@ -50,3 +50,32 @@
 button {
 cursor: pointer;
 }
+
+/* react-calendar base override */
+.react-calendar {
+  width: 200%;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  background-color: var(--surface-light);
+  color: var(--text-primary-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark .react-calendar {
+  background-color: var(--surface-dark);
+  color: var(--text-primary-dark);
+}
+
+.react-calendar__tile--now {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 6px;
+}
+
+.react-calendar__tile--active {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+}
+

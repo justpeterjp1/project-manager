@@ -7,8 +7,8 @@ export default function TaskToolbar({activeSection}) {
       className="
         flex flex-wrap items-center justify-between
         bg-[var(--surface-light)] dark:bg-[var(--surface-dark)]
-        rounded-sm p-3
-        border border-[var(--border-light)] dark:border-[var(--border-dark)]
+        rounded-sm p-2
+         border-[var(--border-light)] dark:border-[var(--border-dark)]
         gap-2
       "
     >

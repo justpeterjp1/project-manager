@@ -20,7 +20,7 @@ export default function RecentTasks() {
       className="
         bg-[var(--surface-light)] dark:bg-[var(--surface-dark)]
         rounded-lg p-4 
-        border border-[var(--border-light)] dark:border-[var(--border-dark)]
+         border-[var(--border-light)] dark:border-[var(--border-dark)]
         shadow-sm
       "
     >
