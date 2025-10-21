@@ -15,7 +15,7 @@ export default function CalendarSection() {
           flex-1
           p-4 rounded-xl
           bg-[var(--card-bg)] dark:bg-[var(--card-bg-dark)]
-          shadow-sm border border-[var(--border-light)] dark:border-[var(--border-dark)]
+          shadow-sm  border-[var(--border-light)] dark:border-[var(--border-dark)]
           flex flex-col
         "
       >
@@ -33,7 +33,7 @@ export default function CalendarSection() {
           flex-1
           p-4 rounded-xl
           bg-[var(--card-bg)] dark:bg-[var(--card-bg-dark)]
-          shadow-sm border border-[var(--border-light)] dark:border-[var(--border-dark)]
+          shadow-sm border-[var(--border-light)] dark:border-[var(--border-dark)]
           flex flex-col
         "
       >

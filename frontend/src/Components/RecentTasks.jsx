@@ -18,14 +18,14 @@ export default function RecentTasks() {
   return (
     <div
       className="
-        bg-[var(--surface-light)] dark:bg-[var(--surface-dark)]
-        rounded-lg p-4 
-         border-[var(--border-light)] dark:border-[var(--border-dark)]
+        
+        rounded-lg p-4 bg-[var(--secondary)]
+         border-[var(--border)] text-[var(--text-primary)]
         shadow-sm
       "
     >
-      <div className="flex justify-between items-center mb-3">
-        <h2 className="font-semibold text-lg text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]">
+      <div className="flex justify-between items-center mb-2">
+        <h2 className="font-semibold text-lg text-[var(--primary)]  ">
           Recent Tasks
         </h2>
         <button className="text-sm text-[var(--primary)] hover:underline">View all</button>
@@ -33,17 +33,17 @@ export default function RecentTasks() {
 
       <ul className="divide-y divide-[var(--border-light)] dark:divide-[var(--border-dark)]">
         {recentTasks.map((task, index) => (
-          <li key={index} className="flex justify-between items-center py-2">
+          <li key={index} className="flex justify-between items-center py-2 whitespace-nowrap">
             <div className="flex flex-col">
               <span className="font-medium text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]">
                 {task.title}
               </span>
-              <span className="text-sm text-[var(--text-secondary-light)] dark:text-[var(--text-secondary-dark)]">
+              <span className="text-sm ">
                 {task.project}
               </span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 whitespace-nowrap">
               <span className="text-xs text-gray-400">{task.due}</span>
               <span
                 className={`text-xs px-2 py-1 rounded-full font-medium ${statusColors[task.status]}`}

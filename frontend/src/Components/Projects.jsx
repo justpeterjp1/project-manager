@@ -60,9 +60,13 @@ export default function Projects() {
   ];
 
   return (
-    <div className="w-full h-full transition-all duration-300">
+    <div className="w-full h-full transition-all duration-300 
+    bg-[var(--primary)] dark:bg-[var(--primary-dark)]
+    bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] 
+    text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)] 
+    border border-[var(--border-light)] dark:border-[var(--border-dark)]">
       {!selectedProject ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}

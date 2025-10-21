@@ -19,9 +19,10 @@ export default function UpcomingDeadlines({ items = null }) {
   return (
     <div
       className="
-        bg-[var(--surface-light)] dark:bg-[var(--surface-dark)]
+        bg-[var(--secondary)]
+         border-[var(--border)] text-[var(--text-primary)] 
         rounded-lg p-4
-        border-[var(--border-light)] dark:border-[var(--border-dark)]
+        border-[var(--border)] 
         shadow-sm
         w-full md:w-1/2
       "

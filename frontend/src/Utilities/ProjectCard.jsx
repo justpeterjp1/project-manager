@@ -15,8 +15,9 @@ export default function ProjectCard({
   const displayedTasks = tasks.slice(0, 4);
 
   return (
-    <div className="p-4 m-2 rounded-2xl border border-[var(--border-light)] dark:border-[var(--border-dark)] 
-      shadow-sm bg-[var(--card-bg)] dark:bg-[var(--card-bg-dark)] flex flex-col justify-between 
+    <div className="p-4 m-2 rounded-2xl border-[var(--border-light)] 
+    dark:border-[var(--border-dark)]  shadow-sm  
+    flex flex-col justify-between bg-[var(--secondary)] 
       transition-all duration-300 hover:shadow-md hover:scale-[1.01]">
 
       {/* Header */}

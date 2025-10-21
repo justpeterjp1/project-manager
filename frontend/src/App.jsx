@@ -31,7 +31,7 @@ function App() {
   //   }
   // };
  return (
-   <main className='flex h-screen bg-gray-200 gap-1 dark:bg-gray-900'>
+   <main className='flex h-screen gap-1 '>
           <Sidebar 
             isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}
             activeSection={activeSection} setActiveSection={setActiveSection}
@@ -40,7 +40,7 @@ function App() {
         <div className='flex flex-col flex-1 gap-1'>
           <Header  isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 
-        <section className='flex-1 bg-gray-400 overflow-y-auto p-1 rounded-sm md:ml-66'>
+        <section className='flex-1 bg-[var(--background)]  overflow-y-auto p-1 rounded-sm md:ml-65 '>
           <TaskToolbar activeSection={activeSection} />
           {activeSection === "Dashboard" && <Dashboard />}
           {activeSection === "Tasks" && <Projects />}

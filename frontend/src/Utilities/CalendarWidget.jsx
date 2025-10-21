@@ -6,7 +6,7 @@ export default function CalendarWidget() {
   const [date, setDate] = useState(new Date());
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full bg-[var(--surface-light)] dark:bg-[var(--surface-dark)">
       <Calendar
         onChange={setDate}
         value={date}

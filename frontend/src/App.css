@@ -1,54 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  /* === COLORS === */
-  --primary: #014F86;
-  --primary-light: #60A5FA;
-  --color-primary-dark: #1E3A8A;
+  --background: #f8fafc; /* light */
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text-primary: #0f172a;
 
-  --accent: #00B4D8;
-  --accent-light: #14b7d8;
-
-  --background-light: #F1F5F9;
-  --background-dark: #111827;
-
-  --surface-light: #FFFFFF;
-  --color-surface-dark: #1F2937;
-
-  --color-text-primary-light: #111827;
-  --color-text-primary-dark: #F9FAFB;
-
-  --color-text-secondary-light: #4B5563;
-  --color-text-secondary-dark: #9CA3AF;
-
-  --color-border-light: #E5E7EB;
-  --color-border-dark: #374151;
-
-  /* === SHADOWS === */
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-strong: 0 10px 15px rgba(0, 0, 0, 0.15);
-
-  /* === RADII === */
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
+  --primary: #0369a1;
+  --accent: #22d3ee;
+ 
+  --secondary: #F2F2F2;
 }
+
 .dark {
-  --primary: #60a5fa;
-  --accent: #4ade80;
-  --surface-dark: #1f2937;
-  --text-primary-dark: #f9fafb;
-  --border-dark: #374151;
-  --surface-hover-dark: #374151;
+  --background: #131a2b; /* dark */
+  --surface: #1e293b;
+  --border: #334155;
+  --text-primary: #e2e8f0;
+  --secondary: #6B7280;
+
+  --primary: #2563eb;
+   --accent: #06b6d4;
 }
+
+
+
 
 .logoImg {
- padding: 16px;
- 
+  padding: 16px;
+
 }
 
 button {
-cursor: pointer;
+  cursor: pointer;
 }
 
 /* react-calendar base override */
@@ -78,4 +62,3 @@ cursor: pointer;
   color: #fff;
   border-radius: 6px;
 }
-

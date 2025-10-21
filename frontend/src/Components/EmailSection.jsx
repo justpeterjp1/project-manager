@@ -45,7 +45,7 @@ export default function EmailSection() {
         className="
           flex items-center justify-between
           bg-[var(--surface-light)] dark:bg-[var(--surface-dark)]
-          border border-[var(--border-light)] dark:border-[var(--border-dark)]
+           border-[var(--border-light)] dark:border-[var(--border-dark)]
           rounded-md p-3
         "
       >
@@ -70,7 +70,7 @@ export default function EmailSection() {
         className="
           flex flex-col
           bg-[var(--surface-light)] dark:bg-[var(--surface-dark)]
-          border border-[var(--border-light)] dark:border-[var(--border-dark)]
+           border-[var(--border-light)] dark:border-[var(--border-dark)]
           rounded-md overflow-hidden divide-y divide-[var(--border-light)] dark:divide-[var(--border-dark)]
         "
       >
