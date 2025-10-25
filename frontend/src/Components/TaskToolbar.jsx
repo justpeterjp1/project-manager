@@ -7,10 +7,10 @@ export default function TaskToolbar({ activeSection, user = "Jane" }) {
             // Dashboard
             case "Dashboard":
                 return (
-                    <div className="flex justify-between items-center  dark:bg-[var(secondary-dark)]  p-3 border-b border-[var(--border-light)] ">
+                    <div className="flex justify-between items-center bg-[var(secondary)] text-[var(--text-primary)] p-3 border-b border-[var(--border)] ">
                         <div>
                             <h1 className="font-semibold text-lg">{activeSection}</h1>
-                            <p className="text-sm text-gray-500">Hi {user}, welcome back</p>
+                            <p className="text-sm ">Hi {user}, welcome back</p>
                         </div>
                         <ButtonOutline label="My Project" icon={ChevronDown} />
                     </div>
@@ -19,7 +19,7 @@ export default function TaskToolbar({ activeSection, user = "Jane" }) {
             // Tasks
             case "Tasks":
                 return (
-                    <div className="flex justify-between items-center bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] p-3 border-b border-[var(--border-light)] dark:border-[var(--border-dark)]">
+                    <div className="flex justify-between items-center bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] p-3  border-[var(--border-light)] dark:border-[var(--border-dark)]">
                         <div>
                             <h1 className="font-semibold text-lg">{activeSection}</h1>
                             <p className="text-sm text-gray-500">Make progress, one task at a time</p>
@@ -60,7 +60,7 @@ export default function TaskToolbar({ activeSection, user = "Jane" }) {
             // Calendar
             case "Calendar":
                 return (
-                    <div className="flex justify-between items-center bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] p-3 border-b border-[var(--border-light)] dark:border-[var(--border-dark)]">
+                    <div className="flex justify-between items-center bg-[var(--surface)] d p-3 border-b border-[var(--border)] ">
                         <div>
                             <h1 className="font-semibold text-lg">{activeSection}</h1>
                             <p className="text-sm text-gray-500">Track deadlines and schedule your work</p>

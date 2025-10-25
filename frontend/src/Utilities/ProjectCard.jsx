@@ -1,10 +1,16 @@
 import Button from "../Utilities/ButtonOutline";
 import React from "react";
-import { ArrowUp } from "lucide-react"
+import {ListChecks,  FolderIcon, BriefcaseIcon, LayersIcon } from "lucide-react"
 import ButtonOutline from "../Utilities/ButtonOutline";
 
+const iconMap = {
+  ListChecks,
+  FolderIcon,
+  BriefcaseIcon, 
+  LayersIcon
+}
 export default function ProjectCard({
-  icon: Icon,
+  icon,
   title,
   description,
   progress,
@@ -13,7 +19,7 @@ export default function ProjectCard({
 }) {
   const progressValue = Math.min(Math.max(progress, 0), 100);
   const displayedTasks = tasks.slice(0, 4);
-
+  const Icon = iconMap[icon] || FolderIcon;
   return (
     <div className="p-4 m-2 rounded-2xl border-[var(--border-light)] 
     dark:border-[var(--border-dark)]  shadow-sm  
@@ -44,8 +50,8 @@ export default function ProjectCard({
 
       {/* Task List */}
       <ul className="text-sm text-gray-800 dark:text-gray-300 mb-3 list-disc pl-5">
-        {displayedTasks.map((task, index) => (
-          <li key={index}>{task}</li>
+        {displayedTasks.map((task) => (
+          <li key={task._id}>{task.title}</li>
         ))}
         {tasks.length === 0 && (
           <li className="italic text-gray-400">No tasks added yet</li>

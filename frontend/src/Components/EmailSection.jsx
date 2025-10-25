@@ -69,18 +69,18 @@ export default function EmailSection() {
       <div
         className="
           flex flex-col
-          bg-[var(--surface-light)] dark:bg-[var(--surface-dark)]
-           border-[var(--border-light)] dark:border-[var(--border-dark)]
+          bg-[var(--surface)] 
+           border-[var(--border)] 
           rounded-md overflow-hidden divide-y divide-[var(--border-light)] dark:divide-[var(--border-dark)]
         "
       >
         {emails.map((email) => (
           <div
             key={email.id}
-            className="flex justify-between items-start p-4 hover:bg-[var(--accent-light)] dark:hover:bg-[var(--accent-dark)] transition cursor-pointer"
+            className="flex justify-between items-start p-4 hover:bg-[var(--accent-light)]  transition cursor-pointer"
           >
             <div>
-              <h3 className="font-semibold text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]">
+              <h3 className="font-semibold text-[var(--text-primary)] dark:text-[var(--text-primary-dark)]">
                 {email.from}
               </h3>
               <p className="text-sm text-[var(--text-secondary-light)] dark:text-[var(--text-secondary-dark)]">

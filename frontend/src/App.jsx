@@ -31,16 +31,16 @@ function App() {
   //   }
   // };
  return (
-   <main className='flex h-screen gap-1 '>
+   <main className='flex h-screen gap-1 bg-[var(--background)] text-[var(--text-primary)]'>
           <Sidebar 
             isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}
             activeSection={activeSection} setActiveSection={setActiveSection}
             />
 
-        <div className='flex flex-col flex-1 gap-1'>
+        <div className='flex flex-col flex-1 gap-1 text-[var(--text-primary)]'>
           <Header  isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 
-        <section className='flex-1 bg-[var(--background)]  overflow-y-auto p-1 rounded-sm md:ml-65 '>
+        <section className='flex-1 h-screen bg-[var(--background)]  overflow-y-auto p-1 rounded-sm md:ml-65 '>
           <TaskToolbar activeSection={activeSection} />
           {activeSection === "Dashboard" && <Dashboard />}
           {activeSection === "Tasks" && <Projects />}

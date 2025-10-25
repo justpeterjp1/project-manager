@@ -6,7 +6,7 @@ import ThemeToggle from "../Utilities/ThemeToggle";
 export default function Header({ isSidebarOpen, setIsSidebarOpen }) {
 
     return (
-            <header className="h-16 flex flex-row items-center justify-between px-3 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 ">
+            <header className="h-16 flex flex-row items-center justify-between px-3 border-b bg-[var(--background)]  ">
            {/* Mobile hamburger */}
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}

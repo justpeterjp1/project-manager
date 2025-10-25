@@ -13,11 +13,11 @@
 }
 
 .dark {
-  --background: #131a2b; /* dark */
+  --background: #6B7280; /* */
   --surface: #1e293b;
   --border: #334155;
   --text-primary: #e2e8f0;
-  --secondary: #6B7280;
+  --secondary: #131a2b ;
 
   --primary: #2563eb;
    --accent: #06b6d4;
@@ -27,7 +27,7 @@
 
 
 .logoImg {
-  padding: 16px;
+  padding: 8px;
 
 }
 

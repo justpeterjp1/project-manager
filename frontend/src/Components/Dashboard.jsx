@@ -33,7 +33,7 @@ function ProgressWidget() {
           style={{ width: "68%" }}
         ></div>
       </div>
-      <div className="mt-2 text-sm font-medium text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]">
+      <div className="mt-2 text-sm font-medium text-[var(--text-primary)] dark:text-[var(--text-primary-dark)]">
         68%
       </div>
     </div>

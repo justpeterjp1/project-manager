@@ -5,7 +5,7 @@ export default function SettingsSection() {
     <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
       
       {/* Profile Settings */}
-      <div className="p-4  rounded-2xl shadow-sm bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] border-[var(--border-light)] dark:border-[var(--border-dark)]">
+      <div className="p-4  rounded-2xl shadow-sm bg-[var(--surface)] border-[var(--border-light)] ">
         <h2 className="text-lg font-semibold mb-4">Profile & Account</h2>
 
         <div className="mb-3">
@@ -32,7 +32,7 @@ export default function SettingsSection() {
       </div>
 
       {/* Appearance Settings */}
-      <div className="p-4 rounded-2xl shadow-sm bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] border-[var(--border-light)] dark:border-[var(--border-dark)]">
+      <div className="p-4 rounded-2xl shadow-sm bg-[var(--surface)]  border-[var(--border)] ">
         <h2 className="text-lg font-semibold mb-4">Appearance</h2>
 
         <div className="flex items-center justify-between py-2">
@@ -57,7 +57,7 @@ export default function SettingsSection() {
       </div>
 
       {/* Notifications */}
-      <div className="p-4  rounded-2xl shadow-sm bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] border-[var(--border-light)] dark:border-[var(--border-dark)]">
+      <div className="p-4  rounded-2xl shadow-sm bg-[var(--surface)] border-[var(--border)] ">
         <h2 className="text-lg font-semibold mb-4">Notifications</h2>
 
         <div className="flex items-center justify-between py-2">
@@ -77,7 +77,7 @@ export default function SettingsSection() {
       </div>
 
       {/* System / App Settings */}
-      <div className="p-4 rounded-2xl shadow-sm bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] border-[var(--border-light)] dark:border-[var(--border-dark)]">
+      <div className="p-4 rounded-2xl shadow-sm bg-[var(--surface)]  border-[var(--border-light)] ">
         <h2 className="text-lg font-semibold mb-4">System Settings</h2>
 
         <div className="flex items-center justify-between py-2">

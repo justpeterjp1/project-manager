@@ -25,8 +25,8 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, activeSection, setActiveSect
       )}
 
     <div className={`
-    w-64 bg-white dark:bg-gray-800 border-r border-gray-200 
-    dark:border-gray-700  p-4 flex flex-col
+    w-64 bg-white text-[var(--text-primary)]  border-r border-gray-200 
+     p-4 flex flex-col
     fixed inset-y-0 left-0 z-50
     transform transition-transform duration-300
     -translate-x-full md:translate-x-0
@@ -56,14 +56,15 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, activeSection, setActiveSect
           <button className="bg-[var(--accent)] py-1 px-4 rounded-lg">Download</button>
        </div>
        <hr />
-       <div className="hidde flex gap-2 md:flex mt-1">
+       <div className=" flex gap-2 md:flex mt-1 text-black">
           <img className="h-12" src={profile} alt="user-image" />
           <div>
             <h6 className="font-bold">Jane Doe</h6>
-            <p>Overall Supervisor</p>
+            <p className="text-xs">Overall Supervisor</p>
           </div>
        </div>
-        <Button icon={LogOut} label="logout" />
+        <Button  icon={LogOut} label="logout" />
+        
     </div>
     </>
   )
