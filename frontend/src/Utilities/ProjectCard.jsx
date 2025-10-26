@@ -61,11 +61,13 @@ export default function ProjectCard({
       
 
       {/* View All Tasks Button */}
-      {tasks.length > 4 && (
+      {tasks.length > 1 ? (
         <button  
           onClick={onViewDetails}
-          className="text-xs mt-auto self-start">View all tasks→</button>
-      )}
+          className="text-sm mt-auto self-start">View all tasks→</button>
+      ) : <button  
+          onClick={onViewDetails}
+          className="text-xs mt-auto self-start">Add tasks→</button> }
     </div>
   );
 }

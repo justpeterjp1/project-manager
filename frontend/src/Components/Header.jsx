@@ -11,8 +11,8 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen }) {
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               className="md:hidden top-4 left-4 z-50 bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] p-2 rounded-lg shadow-soft border border-[var(--primary-light)] dark:border-[var(--border-dark)]"
-            > {isSidebarOpen ? ( <X className="w-4 h-4 text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]" />
-              ) : <Menu className="w-4 h-4 text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]" /> } 
+            > {isSidebarOpen ? ( <X className="w-3 h-3 text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]" />
+              ) : <Menu className="w-3 h-3 text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]" /> } 
             </button>
 
                     <div className="flex-1 flex justify-center items-center">

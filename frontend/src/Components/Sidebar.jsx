@@ -9,7 +9,7 @@ import Button from "../Utilities/Button"
 const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, activeSection, setActiveSection }) => {
        const buttons = [
     { icon: LayoutDashboard, label: "Dashboard" },
-    { icon: ClipboardList, label: "Tasks" },
+    { icon: ClipboardList, label: "Projects" },
     { icon: Calendar1, label: "Calendar" },
     { icon: Settings, label: "Settings" },
     { icon: Mail, label: "Email" },

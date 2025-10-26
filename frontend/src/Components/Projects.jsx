@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import { FolderIcon, BriefcaseIcon, LayersIcon } from "lucide-react";
 import ProjectCard from "../Utilities/ProjectCard";
 import ProjectDetails from "../Utilities/ProjectDetails";
-// import api from "../api/api.js"
 
-export default function Projects() {
+// import { api } from "../api/api.js"
+
+export default function Projects({ refresh }) {
     // States
   const [selectedProject, setSelectedProject] = useState(null);
   const [ projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
+  
 //   Handle rendering of available projects from mongoDb database
     useEffect( () => {
         async function displayProjects () {
@@ -28,18 +30,25 @@ export default function Projects() {
             } 
         } 
         displayProjects()
-    }, [])
+    }, [refresh])
     
   // Handle clicking on a project's "View all tasks" button
   const handleViewDetails = (project) => {
-    setLoading(true);
-    setSelectedProject(project);
-    
-  };
-
-  const handleBack = () => setSelectedProject(null);
-
+  setLoading(true);
+  setSelectedProject(project);
   
+ 
+  setTimeout(() => {
+    setLoading(false);
+  }, 500);
+};
+
+const handleBack = () => {
+  setSelectedProject(null);
+  setLoading(false); 
+};
+
+// Show loading while fetching data
   const renderProjectCard = () => {
   if (loading) {
     return (
@@ -77,6 +86,7 @@ export default function Projects() {
 
 return (
   <div
+
     className="w-full h-full transition-all duration-300
     bg-[var(--surface-light)] dark:bg-[var(--surface-dark)]
     text-[var(--text-primary-light)] dark:text-[var(--text-primary-dark)]
@@ -93,6 +103,8 @@ return (
           onBack={handleBack}
         />
       ) }
+
+
     </div>
   );
 }

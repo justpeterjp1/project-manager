@@ -1,7 +1,10 @@
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 import ButtonOutline from "../Utilities/ButtonOutline";
 
-export default function TaskToolbar({ activeSection, user = "Jane" }) {
+export default function TaskToolbar({ activeSection, user = "Jane", onAddProjectClick }) {
+
+     
     const renderToolbar = () => {
         switch (activeSection) {
             // Dashboard
@@ -17,7 +20,7 @@ export default function TaskToolbar({ activeSection, user = "Jane" }) {
                 );
 
             // Tasks
-            case "Tasks":
+            case "Projects":
                 return (
                     <div className="flex justify-between items-center bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] p-3  border-[var(--border-light)] dark:border-[var(--border-dark)]">
                         <div>
@@ -26,15 +29,14 @@ export default function TaskToolbar({ activeSection, user = "Jane" }) {
                         </div>
                         <div className="flex items-center gap-2">
                             <button
+                                onClick={onAddProjectClick}
                                 className="
                    border-[var(--primary)] bg-[var(--primary)] text-white
                   rounded-lg px-3 sm:px-4 py-2 text-sm hover:opacity-90 transition
-                "
-                            >
-                                Add New Task
-                            </button>
+                " >Add Project </button>
                             <ButtonOutline label="Sort by" icon={ChevronDown} />
                         </div>
+                          
                     </div>
                 );
 
