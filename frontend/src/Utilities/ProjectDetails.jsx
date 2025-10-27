@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ArrowLeft, ListChecks, Pencil, Plus, Check, X } from "lucide-react";
 import { createTask, deleteTask, updateTask } from "../api/api.js";
 import * as Icons from "lucide-react";
+import MutateModal from "./MutateModal.jsx";
+import AddTaskModal from "./AddTaskModal.jsx";
 
 
 const ProjectDetails = ({ onBack, project }) => {
@@ -206,166 +208,27 @@ const ProjectDetails = ({ onBack, project }) => {
 
       {/* ADD TASK MODAL */}
       {showAddModal && (
-         <div
-    className="fixed inset-0 bg-[var(--background)] bg-opacity-50 flex items-center justify-center z-50"
-    onClick={() => setShowAddModal(false)} // close when backdrop clicked
-  >
-    <div
-      className="bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] p-6 rounded-2xl shadow-lg w-[90%] max-w-md relative"
-      onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside modal
-    >
-        <section className="mt-4 p-4 bg-[var(--secondary)] rounded-lg border shadow-md">
-          <div className="flex items-center justify-between mb-3">
-            <button
-              onClick={() => setShowAddModal(false)}
-              className="flex items-center gap-1 text-sm text-[var(--primary)] hover:underline"
-            >
-              <X size={16} />
-            </button>
-            <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-              Add New Task
-            </h2>
-          </div>
-          <form
-            onSubmit={handleAddTask}
-            className="flex flex-col gap-2 text-sm text-gray-700 dark:text-gray-300"
-          >
-            <input
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              placeholder="Task name"
-              className="p-2 border rounded-md bg-transparent"
-              required
-            />
-            <input
-              type="text"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              placeholder="Task description"
-              className="p-2 border rounded-md bg-transparent"
-              required
-            />
-            <select
-              name="status"
-              value={formData.status}
-              onChange={handleChange}
-              className="p-2 border rounded-md bg-transparent"
-            >
-              <option value="pending">Pending</option>
-              <option value="in-progress">In Progress</option>
-              <option value="completed">Completed</option>
-            </select>
-            <button
-              type="submit"
-              className="mt-2 bg-[var(--primary)] text-white py-2 rounded-md hover:bg-[var(--accent)]  transition"
-            >
-              Confirm
-            </button>
-          </form>
-        </section>
-         </div>
-  </div>
+          <AddTaskModal
+        showAddModal={showAddModal}
+        setShowAddModal={setShowAddModal}
+        formData={formData}
+        handleChange={handleChange}
+        handleAddTask={handleAddTask}
+      />
       )}
 
       {/* UPDATE/DELETE TASK MODAL */}
       {showMutateModal && selectedTask && (
-         <div
-    className="fixed inset-0 bg-[var(--background)]  bg-opacity-50 flex items-center justify-center z-50"
-    onClick={() => setShowMutateModal(false)} 
-  >
-    <div
-      className="bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] p-6 rounded-2xl shadow-lg w-[90%] max-w-md relative"
-      onClick={(e) => e.stopPropagation()} 
-    >
-        <section className="mt-4 p-4 bg-[var(--secondary)] rounded-lg border shadow-md">
-          <div className="flex items-center justify-between mb-3">
-            <button
-              onClick={() => setShowMutateModal(false)}
-              className="flex items-center gap-1 text-sm text-[var(--primary)] hover:underline"
-            >
-              <ArrowLeft size={16} /> Back
-            </button>
-            <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-              Edit Task
-            </h2>
-          </div>
-          <div className="flex flex-col gap-3 text-sm text-gray-700 dark:text-gray-300">
-            <input
-              type="text"
-              defaultValue={selectedTask.title}
-              onChange={(e) =>
-                setSelectedTask({ ...selectedTask, title: e.target.value })
-              }
-              className="p-2 border rounded-md bg-transparent"
-            />
-            <input
-              type="text"
-              defaultValue={selectedTask.description}
-              onChange={(e) =>
-                setSelectedTask({ ...selectedTask, description: e.target.value })
-              }
-              className="p-2 border rounded-md bg-transparent"
-            />
-            <select
-              defaultValue={selectedTask.status}
-              onChange={(e) =>
-                setSelectedTask({ ...selectedTask, status: e.target.value })
-              }
-              className="p-2 border rounded-md bg-transparent"
-            >
-              <option value="pending">Pending</option>
-              <option value="in-progress">In Progress</option>
-            </select>
-            <div className="flex flex-col gap-3 mt-2">
-  {!confirmDelete ? (
-    <div className="flex gap-3">
-      <button
-        onClick={() =>
-          handleUpdateTask(selectedTask._id, {
-            title: selectedTask.title,
-            description: selectedTask.description,
-            status: selectedTask.status,
-          })
-        }
-        className="flex-1 py-2 bg-[var(--primary)] text-white rounded-md hover:bg-[var(--primary-dark)] transition"
-      >
-        Update
-      </button>
-      <button
-        onClick={() => setConfirmDelete(true)}
-        className="flex-1 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition"
-      >
-        Delete
-      </button>
-    </div>
-  ) : (
-    <div className="text-center text-sm text-gray-300">
-      <p className="mb-2">Are you sure you want to delete this task?</p>
-      <div className="flex gap-3 justify-center">
-        <button
-          onClick={() => handleDeleteTask(selectedTask._id)}
-          className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
-        >
-          Yes, Delete
-        </button>
-        <button
-          onClick={() => setConfirmDelete(false)}
-          className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition"
-        >
-          Cancel
-        </button>
-      </div>
-    </div>
-  )}
-</div>
-
-          </div>
-        </section>
-         </div>
-  </div>
+        <MutateModal
+        showMutateModal={showMutateModal}
+        selectedTask={selectedTask}
+        setShowMutateModal={setShowMutateModal}
+        setSelectedTask={setSelectedTask}
+        confirmDelete={confirmDelete}
+        setConfirmDelete={setConfirmDelete}
+        handleUpdateTask={handleUpdateTask}
+        handleDeleteTask={handleDeleteTask}
+      />
       )}
     </div>
   );
