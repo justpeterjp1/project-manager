@@ -93,17 +93,17 @@ return (
      border-[var(--border-light)] dark:border-[var(--border-dark)]
     rounded-lg bg-[var(--primary)]"
   >
-    {!selectedProject ? (
+    {/* {!selectedProject ? ( */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {renderProjectCard()}
       </div>
-    ) : (
+    {/* ) : (
         <ProjectDetails
           project={selectedProject}
           onBack={handleBack}
           searchQuery={searchQuery}
         />
-      ) }
+      ) } */}
 
 
     </div>
