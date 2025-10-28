@@ -6,7 +6,11 @@ export default function TaskToolbar({ activeSection, user = "Jane", onAddProject
 
      
     const renderToolbar = () => {
-        switch (activeSection) {
+            function onClick() {
+        console.log("My Projects clicked");
+            }
+
+           switch (activeSection) {
             // Dashboard
             case "Dashboard":
                 return (
@@ -15,7 +19,9 @@ export default function TaskToolbar({ activeSection, user = "Jane", onAddProject
                             <h1 className="font-semibold text-lg">{activeSection}</h1>
                             <p className="text-sm ">Hi {user}, welcome back</p>
                         </div>
-                        <ButtonOutline label="My Project" icon={ChevronDown} />
+                        <ButtonOutline 
+                        onClick={onClick}
+                        label="My Projects" icon={ChevronDown} />
                     </div>
                 );
 
@@ -34,30 +40,13 @@ export default function TaskToolbar({ activeSection, user = "Jane", onAddProject
                    border-[var(--primary)] bg-[var(--primary)] text-white
                   rounded-lg px-3 sm:px-4 py-2 text-sm hover:opacity-90 transition
                 " >Add Project </button>
-                            <ButtonOutline label="Sort by" icon={ChevronDown} />
+                            
                         </div>
                           
                     </div>
                 );
 
-            // Projects
-            case "Projects":
-                return (
-                    <div className="flex justify-between items-center bg-[var(--surface-light)] dark:bg-[var(--surface-dark)] p-3 border-b border-[var(--border-light)] dark:border-[var(--border-dark)]">
-                        <div>
-                            <h1 className="font-semibold text-lg">{activeSection}</h1>
-                            <p className="text-sm text-gray-500">Overview of all your projects</p>
-                        </div>
-                        <button
-                            className="
-                 border-[var(--primary)] bg-[var(--primary)] text-white
-                rounded-lg px-3 sm:px-4 py-2 text-sm hover:opacity-90 transition
-              "
-                        >
-                            Add New Project
-                        </button>
-                    </div>
-                );
+        
 
             // Calendar
             case "Calendar":

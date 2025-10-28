@@ -3,7 +3,7 @@ import profile from "../assets/profile.jpeg"
 import ThemeToggle from "../Utilities/ThemeToggle";
 
 
-export default function Header({ isSidebarOpen, setIsSidebarOpen }) {
+export default function Header({ isSidebarOpen, setIsSidebarOpen, searchQuery, setSearchQuery }) {
 
     return (
             <header className="h-16 flex flex-row items-center justify-between px-3 border-b bg-[var(--background)]  ">
@@ -30,7 +30,17 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen }) {
                           dark:text-[var(--text-primary-dark)]"
                         type="text"
                         placeholder="Search for tasks"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                       />
+                       {searchQuery && (
+                        <button
+                          onClick={() => setSearchQuery("")}
+                          className="absolute right-3 top-2.5 text-gray-400 hover:text-[var(--accent)]"
+                        >
+                          <X size={14} />
+                        </button>
+                      )}
                     </div>
               </form>
             </div>

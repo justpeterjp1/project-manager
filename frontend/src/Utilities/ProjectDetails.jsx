@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowLeft, ListChecks, Pencil, Plus, Check, X } from "lucide-react";
 import { createTask, deleteTask, updateTask } from "../api/api.js";
 import * as Icons from "lucide-react";
@@ -6,11 +6,12 @@ import MutateModal from "./MutateModal.jsx";
 import AddTaskModal from "./AddTaskModal.jsx";
 
 
-const ProjectDetails = ({ onBack, project }) => {
+const ProjectDetails = ({ onBack, project, searchQuery }) => {
   if (!project) return null;
 
   const { name, description, progress, icon } = project;
-
+  // =====  Search Filtering of Tasks =====
+  
   // ====== Dyanamic Icon Component ======
   const IconComponent = Icons[project.icon] || Icons.FolderIcon;
 
@@ -94,6 +95,9 @@ const ProjectDetails = ({ onBack, project }) => {
     setSelectedTask(task);
     setShowMutateModal(true);
   };
+
+
+
 
   return (
     <div

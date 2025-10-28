@@ -5,9 +5,9 @@ import ProjectDetails from "../Utilities/ProjectDetails";
 
 // import { api } from "../api/api.js"
 
-export default function Projects({ refresh }) {
+export default function Projects({ refresh, searchQuery, selectedProject, setSelectedProject }) {
     // States
-  const [selectedProject, setSelectedProject] = useState(null);
+
   const [ projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
   
@@ -101,6 +101,7 @@ return (
         <ProjectDetails
           project={selectedProject}
           onBack={handleBack}
+          searchQuery={searchQuery}
         />
       ) }
 
